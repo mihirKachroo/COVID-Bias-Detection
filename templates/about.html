@@ -1,15 +1,68 @@
+<link
+      href="https://unpkg.com/material-components-web@5.1.0/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@5.1.0/dist/material-components-web.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='material.css') }}"
+    />
+    <style>
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      div {
+        border-radius: 5px;
+
+      }
+      </style>
 <h4 class="mdc-typography--headline4">Check Bias 2</h4>
 <h4 class="mdc-typography--body1">
   A recommendation system predicting the grocery items a user will buy
 </h4>
 
 <h2>Form</h2>
-  <form action="/text" method="post">
-    Input text:<br>
-    <input type="text" name="text_input" value="">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+
+  <div>
+    <form action="/text" method="post">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="text_input" placeholder="The Article Url">
+    
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+
   <div id='foo'>
     <br>
     {% for comment in comments %}
