@@ -1,3 +1,4 @@
+#Imports modules
 import pandas as pd
 from flask import Flask, jsonify, request
 from NLPModel import bias
@@ -9,6 +10,7 @@ inputURL='https://www.cnn.com/2020/05/22/media/trump-fox-news-john-roberts/index
 
 result2=getNewsSource.politicalBias(inputURL)
 
+#Function to get title of article
 class TitleParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
@@ -23,6 +25,7 @@ class TitleParser(HTMLParser):
             self.title = data
             self.match = False
 
+#Function to start parser
 html_string = str(urlopen(inputURL).read())
 
 parser = TitleParser()
@@ -30,7 +33,7 @@ parser.feed(html_string)
 statement = parser.title
 
 result = bias.compute_bias(statement)
-
+#Function to calculate if bias or not
 catogory = ""
 if(result>1):
     catogory = "very"
@@ -40,5 +43,5 @@ else:
     catogory = "slightly"
 
 
-
+#Printing answer
 print("This article is "+catogory+" "+result2+" biased.")
