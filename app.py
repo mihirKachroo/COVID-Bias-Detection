@@ -36,7 +36,7 @@ def text(comments=[]):
     inputer=request.form["text_input"]
     answer="didn't work"
     answer=runit.compit(inputer)
-    comments.append("Political Bias: "+str(answer))
+    comments.append(str(answer))
     return redirect(url_for('text'))
 
 if __name__ == "__main__":

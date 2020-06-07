@@ -43,5 +43,6 @@ def compit(inputs):
     else:
         catogory = "slightly"
     
+
     print("This article is "+catogory+" "+result2+" biased.")
-    return("This article is "+catogory+" "+result2+" biased.")
+    return("Our bias detection algorithm gave this article a rating of "+str(result)+". And our mediabiasfactcheck.com API said that when it comes to reporting on COVID-19, it is "+catogory+" biased. Overall, this article is "+catogory+" "+result2+" biased.")

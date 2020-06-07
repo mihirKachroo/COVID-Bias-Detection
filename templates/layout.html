@@ -131,7 +131,7 @@
                 <span class="mdc-tab__icon material-icons"
                   >supervisor_account</span
                 >
-                <span class="mdc-tab__text-label">Communication</span>
+                <span class="mdc-tab__text-label">Submission</span>
                 <span class="mdc-tab-indicator">
                   <span
                     class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
@@ -152,27 +152,67 @@
 
     <div id="block">
       
-      <h4 class="mdc-typography--headline4">Check Bias 2</h4>
-<h4 class="mdc-typography--body1">
-  A recommendation system predicting the grocery items a user will buy
-</h4>
-
-<h2>Form</h2>
-  <form action="/text" method="post">
-    Input text:<br>
-    <input type="text" name="text_input" value="">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
-  <div id='foo'>
-    <br>
-    {% for comment in comments %}
-    <div class="row">
-      {{ comment }} 
+      <style>
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        div {
+          border-radius: 5px;
+  
+        }
+        </style>
+  <h4 class="mdc-typography--headline4">Check COVID-19 Bias</h4>
+  
+  <h4 class="mdc-typography--body1">
+    Many of the media sources today lie about the facts relating to COVID-19 in order to boost their ratings. This has become a huge problem all over the world. We created an machine learning algorithm and web app where the user can input in a website and our app scans it and gives back its political bias and covid-19 facts ratings.
+  </h4>
+  <br/>
+  <br/>
+  
+  <h2>Check COVID-19 Bias:</h2>
+  
+    <div>
+      <form action="/text" method="post">
+        <label for="fname">Enter Article URL</label>
+        <br/>
+        <input type="text" id="fname" name="text_input" placeholder="The Article Url">
+        <br/>
+        <input type="submit" value="Submit">
+      </form>
     </div>
-    {% endfor %}
-  </div>
-
+  
+  
+    <div id='foo'>
+      <br>
+      {% for comment in comments %}
+      <div class="row">
+        {{ comment }} 
+      </div>
+      {% endfor %}
+    </div>
+  
     </div>
 
 
