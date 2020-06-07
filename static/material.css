@@ -1,0 +1,73 @@
+.main-box {
+  max-width: 70ch;
+  padding: 2ch;
+  margin: auto;
+}
+
+.mdc-select {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.icon-link {
+  color: #6200ee;
+  fill: #6200ee;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.icon-row {
+  text-align: center;
+}
+
+.profile {
+  float: right;
+}
+
+.profile-picture {
+  width: 100%;
+  border: 1px;
+}
+
+.chart {
+  width: 100%;
+  height: 500px;
+}
+
+.video {
+  display: block;
+  margin: auto;
+}
+
+.article-preview {
+  width: 100%;
+}
+
+.project-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.body-link:link {
+  color: #6200ee;
+}
+
+.body-link:visited {
+  color: #6200ee;
+}
+
+.body-link:hover {
+  color: #000000;
+}
+
+.body-link:active {
+  color: #6200ee;
+}
+
+.dress-up-gif {
+  height: 405px;
+}
+
+.GROCERY-screenshot {
+  height: 375px;
+}

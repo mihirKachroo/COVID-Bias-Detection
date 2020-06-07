@@ -1,0 +1,20 @@
+<h4 class="mdc-typography--headline4">Check Bias 2</h4>
+<h4 class="mdc-typography--body1">
+  A recommendation system predicting the grocery items a user will buy
+</h4>
+
+<h2>Form</h2>
+  <form action="/text" method="post">
+    Input text:<br>
+    <input type="text" name="text_input" value="">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <div id='foo'>
+    <br>
+    {% for comment in comments %}
+    <div class="row">
+      {{ comment }} 
+    </div>
+    {% endfor %}
+  </div>

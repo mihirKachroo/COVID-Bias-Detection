@@ -1,0 +1,138 @@
+<script type="text/javascript">
+  google.charts.load("current", { packages: ["bar"] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var effectiveData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 8],
+      ["Agree", 44],
+      ["Strongly agree", 88],
+    ]);
+
+    var clarityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 6],
+      ["Agree", 45],
+      ["Strongly agree", 89],
+    ]);
+
+    var comprehensionData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 1],
+      ["Neutral", 10],
+      ["Agree", 33],
+      ["Strongly agree", 96],
+    ]);
+
+    var questionsData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 2],
+      ["Neutral", 8],
+      ["Agree", 48],
+      ["Strongly agree", 82],
+    ]);
+
+    var availabilityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 7],
+      ["Agree", 34],
+      ["Strongly agree", 99],
+    ]);
+
+    var productivityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 3],
+      ["Neutral", 6],
+      ["Agree", 35],
+      ["Strongly agree", 96],
+    ]);
+    var options = {
+      chart: {
+        title: "Instructor was an effective lecturer",
+      },
+      fontSize: 25,
+      colors: "#6200EE",
+      vAxis: {
+        title: "Number of votes",
+        titleTextStyle: {
+          fontSize: 13,
+        },
+        textStyle: {
+          fontSize: 13,
+        },
+        // gridlines: {
+        //   color: "#442C2E",
+        // },
+      },
+      hAxis: {
+        // Slanted text not supported yet for Material versions
+        // slantedText: true,
+        // slantedTextAngle: 45,
+        titleTextStyle: {
+          fontSize: 13,
+        },
+        textStyle: {
+          fontSize: 13,
+        },
+      },
+      legend: {
+        position: "none",
+      },
+    };
+
+    var chart = new google.charts.Bar(
+      document.getElementById("columnchart_material")
+    );
+    chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
+
+    const select = new mdc.select.MDCSelect(
+      document.querySelector(".mdc-select")
+    );
+    select.listen("MDCSelect:change", () => {
+      if (select.value === "effectiveness") {
+        options.chart.title = "Instructor was an effective lecturer";
+        chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
+      }
+      if (select.value === "clarity") {
+        options.chart.title = "Instructor presented the subject matter clearly";
+        chart.draw(clarityData, google.charts.Bar.convertOptions(options));
+      }
+      if (select.value === "comprehension") {
+        options.chart.title =
+          "Lectures I attended helped me understand the content";
+        chart.draw(
+          comprehensionData,
+          google.charts.Bar.convertOptions(options)
+        );
+      }
+      if (select.value === "questions") {
+        options.chart.title =
+          "Instructor answered questions clearly and effectively";
+        chart.draw(questionsData, google.charts.Bar.convertOptions(options));
+      }
+      if (select.value === "availability") {
+        options.chart.title = "Instructor was available and helpful";
+        chart.draw(availabilityData, google.charts.Bar.convertOptions(options));
+      }
+      if (select.value === "productivity") {
+        options.chart.title =
+          "Instructor effectively used time during class periods";
+        chart.draw(productivityData, google.charts.Bar.convertOptions(options));
+      }
+    });
+  }
+</script>
+<h4 class="mdc-typography--headline4">Place Holder</h4>
+<p class="mdc-typography--body1">
+  HI. This is just stupid placeholder text.
+</p>
