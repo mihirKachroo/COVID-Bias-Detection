@@ -17,6 +17,6 @@ decorator==4.2.1
 decorators==0.1.1
 sklearn==0.0
 scikit-learn==0.19.1
-numpy==1.14.2
+numpy==1.22.0
 scipy==1.0.0
 click==7.1.2
